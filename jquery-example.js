@@ -50,7 +50,7 @@
                             },
                             error(error) {
                                 $(".errors").html(error.errors.messages.join("</br>"));      
-                                $(".alert-box").show();          
+                                $(".errors").show();          
                             },
                     });
 
