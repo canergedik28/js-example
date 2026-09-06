@@ -56,6 +56,18 @@
 
                })
 
+              
+               $(".view").click(function () {
+                       $(".test-row").find(".value").eq(0).html($(this).closest("tr").find('td').eq(1).text());
+                       $(".test-row").find(".value").eq(2).html($(this).closest("tr").find('td').eq(2).text());
+                       $(".test-row").find(".value").eq(1).html($(this).closest("tr").find('td').eq(3).text());
+                       $(".test-row .messages").html($(this).closest("tr").find('td').eq(4).text());
+                       $("#modal").show(250);    
+               });
+
+
+     
+
 
 
 
