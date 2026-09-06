@@ -34,4 +34,29 @@
                     $("#test5").prop("selectedIndex", 0);
                     window.history.replaceState({}, document.title, window.location.pathname);
 
-          });      
+          });  
+
+
+          $("#registerForm").on("submit", function (e) {
+          e.preventDefault();
+               $.ajax({
+                      url: "http://localhost/test/public/test-user",
+                      type: "POST",
+                      data:$(this).serialize(),
+                            success: function (response) {
+                                  if(response.success){
+                                     window.location.href= "http://localhost/test/public/index"
+                                  }
+                            },
+                            error(error) {
+                                $(".errors").html(error.errors.messages.join("</br>"));      
+                                $(".alert-box").show();          
+                            },
+                    });
+
+               })
+
+
+
+
+
