@@ -49,7 +49,7 @@
                                   }
                             },
                             error(error) {
-                                $(".errors").html(error.errors.messages.join("<br/>"));      
+                                $(".errors").html(error.responseJSON.messages.join("</br>"));
                                 $(".errors").show();          
                             },
                     });
